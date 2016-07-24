@@ -118,7 +118,7 @@ class Note extends Component {
         onDrag={this.onDrag}
         onStop={this.onStopDrag}
       >
-        <div className="note" style={{ height: this.props.height, width: this.props.note.width }}>
+        <div className="note" >
           {this.renderNote()}
         </div>
       </Draggable>
