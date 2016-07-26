@@ -8,10 +8,11 @@
     },
     rules: {
         strict: 0,
-        quotes: [2, "single"],
+        quotes: 0,
         no-else-return: 0,
         new-cap: 0,
         no-console: 0,
+        no-var: 0,
         import/no-unresolved: [2, { commonjs: true}],
         no-unused-vars: ["error", { "vars": "all", "args": "none" }],
         no-underscore-dangle: 0,
