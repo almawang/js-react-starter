@@ -10,7 +10,7 @@ firebase.initializeApp(config);
 
 // FirebaseUI config.
 var uiConfig = {
-  'signInSuccessUrl': 'https://localhost:8080/board',
+  'signInSuccessUrl': "#/noteboard",
   'signInOptions': [
     // Leave the lines as is for the providers you want to offer your users.
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -19,8 +19,16 @@ var uiConfig = {
 };
 // Initialize the FirebaseUI Widget using Firebase.
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
-// The start method will wait until the DOM is loaded.
-ui.start('#firebaseui-auth-container', uiConfig);
+
+export function startAuth() {
+  // The start method will wait until the DOM is loaded.
+  ui.start('#firebaseui-auth-container', uiConfig);
+}
+
+
+export function getUser(callback) {
+  callback(firebase.auth().currentUser);
+}
 
 export function fetchNotes(callback) {
   firebase.database().ref('notes').on('value', (snapshot) => {

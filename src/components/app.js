@@ -13,6 +13,7 @@ class App extends Component {
     this.state = {
       notes: Immutable.Map(),
       undo: Immutable.Stack(),
+      user: null,
     };
     this.undoChange = this.undoChange.bind(this);
   }
@@ -21,10 +22,16 @@ class App extends Component {
     firebasedb.fetchNotes((notes) => {
       this.setState({ notes: Immutable.Map(notes), undo: this.state.undo.unshift(notes) });
     });
+    firebasedb.getUser((user) => {
+      this.setState({ user });
+    });
   }
 
   undoChange() {
-    firebasedb.undoChange(this.state.undo.first());
+    if (this.state.undo.size !== 0) {
+      firebasedb.undoChange(this.state.undo.first());
+      this.setState({ undo: this.state.undo.shift() });
+    }
   }
 
   render() {
