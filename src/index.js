@@ -4,7 +4,7 @@ import { Router, Route, IndexRoute } from 'react-router';
 
 import App from './components/app';
 import Home from './home';
-import Login from './login';
+import Login from './components/login';
 
 import './style.scss';
 
