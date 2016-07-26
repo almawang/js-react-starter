@@ -3,13 +3,20 @@
   <head>
     <title="Alma's Note App">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Indie+Flower" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Indie+Flower|Arvo" rel="stylesheet">
     <link href="build/bundle.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-
+    <script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
+    <script src="./src/firebasedb.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/live/0.4/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/live/0.4/firebase-ui-auth.css" />
   </head>
   <body>
+    <nav>
+      <div id="note-id">Alma's Notes</div>
+    </nav>
+    <div id="firebaseui-auth-container"></div>
     <div id="main"></div>
   </body>
-  <script src="build/bundle.js"  charset="utf-8"></script>
+  <script src="../build/bundle.js"  charset="utf-8"></script>
 </html>
